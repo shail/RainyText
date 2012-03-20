@@ -5,18 +5,12 @@
 		<td>Zipcode</td>
 		<td>Phone Number</td>
 		<td>Text Time</td>
-		<td>Edit</td>
-		<td>Delete?</td>
 	</tr>
 <@forecast_area.each do |area|
 	<tr>
 		<td><%= area.zipcode %></td>
 		<td><%= area.phone_number %></td>
 		<td><%= area.time %></td>
-		<td><%= link_to "Edit", edit_list_task_path(@list, task), :class => "btn btn-warning" %></td>
-		<td><%= link_to "Delete", list_task_path(@list, task), :class => "btn btn-danger",
-				:confirm => "Are you sure? If you're done with the task," + 
-							"you should click 'finished', not delete this!", :method => :delete%></td>
 	</tr>
 
 	<% end %>

@@ -1,5 +1,6 @@
 WeatherApp::Application.routes.draw do
   root to: 'static_pages#home'
+  resources :forecast_areas
   devise_for :users
 
   
