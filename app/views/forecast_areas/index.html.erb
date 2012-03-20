@@ -1,0 +1,17 @@
+<h2>Your Forecast Areas</h2>
+
+<table class="span6 table table-striped">
+	<tr>
+		<td>Zipcode</td>
+		<td>Phone Number</td>
+		<td>Text Time</td>
+	</tr>
+<% @forecast_areas.each do |area| %>
+	<tr>
+		<td><%= area.zipcode %></td>
+		<td><%= area.phone_number %></td>
+		<td><%= area.time %></td>
+	</tr>
+
+	<% end %>
+</table>

@@ -1,6 +1,10 @@
 class ForecastAreasController < ApplicationController
 	before_filter :authenticate_user!
 
+	def index
+		@forecast_areas = ForecastArea.all
+	end
+
 	def show
 		@forecast_area = ForecastArea.find(params[:id])
 	end

@@ -5,10 +5,11 @@
  		We solve all your problems by reminding you to grab your umbrella before it starts raining!
  	</h2>
  	<% if current_user %>
- 	<%= link_to "Your Forecast Areas", forecast_area_path , class: "btn btn-large btn-primary" %>
+ 	<%= link_to "Your Forecast Areas", forecast_areas_path , class: "btn btn-large btn-primary" %>
  	<% else %>
  	<%= link_to "Sign up now!", new_user_registration_path , class: "btn btn-large btn-primary" %>
  	<% end %>
  </div>
 
+ 
  
