@@ -1,6 +1,6 @@
 <h2>Your Forecast Areas</h2>
 
-<table class="table table-striped">
+<table class="table table-bordered table-striped">
 	<tr>
 		<td>Zipcode</td>
 		<td>Phone Number</td>
@@ -9,7 +9,7 @@
 		<td>Delete</td>
 	</tr>
 <% @forecast_areas.each do |area| %>
-	<tr style="background-color:white">
+	<tr>
 		<td><%= area.zipcode %></td>
 		<td><%= area.phone_number %></td>
 		<td><%= area.time.to_formatted_s(:time) %></td>
