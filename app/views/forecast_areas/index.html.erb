@@ -9,7 +9,7 @@
 		<td>Delete</td>
 	</tr>
 <% @forecast_areas.each do |area| %>
-	<tr>
+	<tr style="background-color:white">
 		<td><%= area.zipcode %></td>
 		<td><%= area.phone_number %></td>
 		<td><%= area.time.to_formatted_s(:time) %></td>
