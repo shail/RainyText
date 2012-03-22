@@ -1,5 +1,6 @@
 class ForecastAreasController < ApplicationController
 	before_filter :authenticate_user!
+	before_filter :correct_user, :only => :destroy
 
 	def index
 		@forecast_areas = current_user.forecast_areas
@@ -36,9 +37,16 @@ class ForecastAreasController < ApplicationController
 	end
 
 	def destroy
-		@forecast_area = current_user.forecast_areas.find_by_id(params[:id])
 		@forecast_area.destroy
 		redirect_to forecast_areas_path
 	end
 
+	private
+
+		def correct_user
+			@forecast_area = current_user.forecast_areas.find_by_id(params[:id])
+			redirect_to forecast_areas_path if @forecast_area.nil?
+		end
+
 end
+

@@ -40,4 +40,12 @@
 # weather_info = barometer.measure
 # weather_type = weather_info.current.icon
 
+# user_forecast_info
+
+# all_user = User.all
+# all_user.each do |user|
+# 	user_forecasts = user.forecast_areas
+# 	user_forecasts.each do |forecast|
+# 		@user_forecast_info << 
+
 
