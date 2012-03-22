@@ -1,17 +1,22 @@
 <h2>Your Forecast Areas</h2>
 
-<table class="span6 table table-striped">
+<table class="table table-striped">
 	<tr>
 		<td>Zipcode</td>
 		<td>Phone Number</td>
 		<td>Text Time</td>
+		<td>Edit</td>
+		<td>Delete</td>
 	</tr>
 <% @forecast_areas.each do |area| %>
 	<tr>
 		<td><%= area.zipcode %></td>
 		<td><%= area.phone_number %></td>
-		<td><%= area.time %></td>
+		<td><%= area.time.to_formatted_s(:time) %></td>
+		<td><%= link_to "Edit", edit_forecast_area_path(area), :class => "btn btn-info" %></td>
+		<td><%= link_to "Delete", forecast_area_path(area), :confirm => "Are you sure?", :method => 'delete', :class => "btn btn-danger" %></td>
 	</tr>
 
 	<% end %>
 </table>
+<%= link_to "Add a Forecast Area", new_forecast_area_path, :class => "btn btn-primary btn-large" %>

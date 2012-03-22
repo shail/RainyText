@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.2'
 gem 'bootstrap-sass', '2.0.0'
 gem 'devise', '~>2.0.0'
+gem 'rufus-scheduler', '2.0.16'
 
 
 group :development, :test do
