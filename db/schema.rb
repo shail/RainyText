@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120319035743) do
+ActiveRecord::Schema.define(:version => 20120322113018) do
 
   create_table "forecast_areas", :force => true do |t|
-    t.integer  "zipcode"
-    t.integer  "phone_number"
     t.datetime "time"
     t.integer  "user_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "zipcode"
+    t.string   "phone_number"
   end
 
   create_table "users", :force => true do |t|
