@@ -1,7 +1,7 @@
-desc "This task checks the weather and sends a text"
-  task :check_weather => :environment do
+task :check_weather => :environment do
   @danger_icons = ["chanceflurries", "chancerain", "chancetstorm", "cloudy", "mostlycloudy", "rain", "tstorms"]
   all_users = User.all
+
   all_users.each do |user|
   	
   	forecast = user.forecast_area
