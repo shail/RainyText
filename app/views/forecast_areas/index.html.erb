@@ -8,15 +8,17 @@
 		<td>Edit</td>
 		<td>Delete</td>
 	</tr>
-<% @forecast_areas.each do |area| %>
+<% if @forecast_area %>
 	<tr>
-		<td><%= area.zipcode %></td>
-		<td><%= area.phone_number %></td>
-		<td><%= area.time.to_formatted_s(:time) %></td>
-		<td><%= link_to "Edit", edit_forecast_area_path(area), :class => "btn btn-info" %></td>
-		<td><%= link_to "Delete", forecast_area_path(area), :confirm => "Are you sure?", :method => 'delete', :class => "btn btn-danger" %></td>
+		<td><%= @forecast_area.zipcode %></td>
+		<td><%= @forecast_area.phone_number %></td>
+		<td><%= @forecast_area.time.to_formatted_s(:time) %></td>
+		<td><%= link_to "Edit", edit_forecast_area_path(@forecast_area), :class => "btn btn-info" %></td>
+		<td><%= link_to "Delete", forecast_area_path(@forecast_area), :confirm => "Are you sure?", :method => 'delete', :class => "btn btn-danger" %></td>
 	</tr>
 
 	<% end %>
 </table>
+<% if @forecast_area.nil? %>
 <%= link_to "Add a Forecast Area", new_forecast_area_path, :class => "btn btn-primary btn-large" %>
+<% end %>

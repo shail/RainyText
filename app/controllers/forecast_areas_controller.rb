@@ -3,7 +3,7 @@ class ForecastAreasController < ApplicationController
 	before_filter :correct_user, :only => :destroy
 
 	def index
-		@forecast_areas = current_user.forecast_areas
+		@forecast_area = current_user.forecast_area
 	end
 
 	def show
@@ -44,7 +44,7 @@ class ForecastAreasController < ApplicationController
 	private
 
 		def correct_user
-			@forecast_area = current_user.forecast_areas.find_by_id(params[:id])
+			@forecast_area = current_user.forecast_area
 			redirect_to forecast_areas_path if @forecast_area.nil?
 		end
 
