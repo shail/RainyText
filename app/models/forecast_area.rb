@@ -7,7 +7,5 @@ class ForecastArea < ActiveRecord::Base
 	validates :phone_number, :length => { :is => 10}
 	belongs_to :user
 
-	def check_the_weather
-
-	end
 end
+
