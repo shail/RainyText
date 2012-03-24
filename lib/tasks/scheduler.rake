@@ -5,7 +5,6 @@ task :check_weather_6 => :environment do
   all_users.each do |user|
   	times = ['6:00 AM', '7:00 AM', '8:00 AM']
   	forecast = user.forecast_area
-    time_zone = user.forecast_area.forecast_time_zone
     time = user.forecast_area.time
 
   	
