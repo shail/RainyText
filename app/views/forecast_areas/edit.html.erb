@@ -8,8 +8,11 @@
 	<%= f.label :phone_number %>
 	<%= f.phone_field :phone_number %>
 
-	<%= f.label :scheduled_time %>
-	<%= f.time_select(:time, :order => [:hour, :minute]) %>
+	<%= f.label :time %>
+	<%= f.select :time, [['6:00 AM'], ['7:00 AM'], ['8:00 AM']] %>
+
+	<%= f.label :forecast_time_zone %>
+	<%= f.select :forecast_time_zone, [['Pacific'], ['Mountain'], ['Central'], ['Eastern']] %>
 <br />
 <%= f.submit "Update forecast area", :class => "btn btn-primary" %>
 <% end %>
