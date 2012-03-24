@@ -1,10 +1,10 @@
-task :check_weather_6 => :environment do
+task :check_weather_3 => :environment do
   @danger_icons = ["chanceflurries", "chancerain", "chancetstorm", "cloudy", "mostlycloudy", "rain", "tstorms"]
   all_users = User.all
 
   all_users.each do |user|
   	times = ['6:00 AM', '7:00 AM', '8:00 AM']
-  	forecast = user.forecast_area
+  	forecast = user.forecast_area.forecast_time_zone
     time = user.forecast_area.time
 
   	
