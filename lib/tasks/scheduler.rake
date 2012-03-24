@@ -1,12 +1,15 @@
-task :check_weather => :environment do
+task :check_weather_6 => :environment do
   @danger_icons = ["chanceflurries", "chancerain", "chancetstorm", "cloudy", "mostlycloudy", "rain", "tstorms"]
   all_users = User.all
 
   all_users.each do |user|
-  	
+  	times = ['6:00 AM', '7:00 AM', '8:00 AM']
   	forecast = user.forecast_area
+    time_zone = user.forecast_area.forecast_time_zone
+    time = user.forecast_area.time
+
   	
-  	unless forecast.time.hour.nil?
+  	if user.forecast_area
   		
   		barometer = Barometer.new(forecast.zipcode)
   		weather_info = barometer.measure

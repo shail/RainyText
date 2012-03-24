@@ -11,8 +11,8 @@
 	<%= f.label :time %>
 	<%= f.select :time, [['6:00 AM'], ['7:00 AM'], ['8:00 AM']] %>
 
-	<%= f.label :time_zone %>
-	<%= f.collection_select :forecast_time_zone, ActiveSupport::TimeZone.us_zones, :name, :to_s %>
+	<%= f.label :forecast_time_zone %>
+	<%= f.select :forecast_time_zone, [['Pacific'], ['Mountain'], ['Central'], ['Eastern']] %>
 	
 <br />
 <%= f.submit "Submit", :class => "btn btn-primary" %>
