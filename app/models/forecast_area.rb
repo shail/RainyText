@@ -5,6 +5,7 @@ class ForecastArea < ActiveRecord::Base
 	validates :time, :presence => true
 	validates :zipcode, :length => { :is => 5 }
 	validates :phone_number, :length => { :is => 10}
+	validates :time_zone, :presence => true
 	belongs_to :user
 
 end
