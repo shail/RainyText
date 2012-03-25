@@ -1,3 +1,17 @@
+task :test => :environment do
+  account_sid = 'AC1e33ca9e05cd4f86b12ffab6078464f6'
+      auth_token = 'c451f2e1dc06ae831b8c542323099101'
+
+      client = Twilio::REST::Client.new account_sid, auth_token
+    
+
+    client.account.sms.messages.create(
+      :from => '+17273466568',
+      :to => "+16039186534",
+      :body => "hello"
+    )
+end
+
 task :first_check_weather => :environment do
   all_users = User.all
 
