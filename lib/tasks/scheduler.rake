@@ -49,11 +49,12 @@ task :second_check_weather => :environment do
   all_users = User.all
 
   all_users.each do |user|
-    forecast = user.forecast_area
-    time_zone = forecast.forecast_time_zone
-    time = forecast.time.hour
-    zipcode = forecast.zipcode
-    phone_number = "+1#{forecast.phone_number}"
+    if user.forecast_area
+      forecast = user.forecast_area
+      time_zone = forecast.forecast_time_zone
+      time = forecast.time.hour
+      zipcode = forecast.zipcode
+      phone_number = "+1#{forecast.phone_number}"
 
     
     if ((time_zone == 'Eastern' && time == 7) || (time_zone == 'Central' && time == 6))
@@ -88,6 +89,7 @@ task :second_check_weather => :environment do
       :body => "#{subject}"
     )
    end
+  end
   end  
 end
 
@@ -95,11 +97,12 @@ task :third_check_weather => :environment do
   all_users = User.all
 
   all_users.each do |user|
-    forecast = user.forecast_area
-    time_zone = forecast.forecast_time_zone
-    time = forecast.time.hour
-    zipcode = forecast.zipcode
-    phone_number = "+1#{forecast.phone_number}"
+    if user.forecast_area
+      forecast = user.forecast_area
+      time_zone = forecast.forecast_time_zone
+      time = forecast.time.hour
+      zipcode = forecast.zipcode
+      phone_number = "+1#{forecast.phone_number}"
 
     
     if ((time_zone == 'Eastern' && time == 8) || (time_zone == 'Central' && time == 7) || (time_zone == 'Mountain' && time == 6))
@@ -133,6 +136,7 @@ task :third_check_weather => :environment do
       :to => "#{phone_number}",
       :body => "#{subject}"
     )
+    end
    end
   end  
 end
@@ -141,6 +145,7 @@ task :fourth_check_weather => :environment do
   all_users = User.all
 
   all_users.each do |user|
+    if user.forecast_area
     forecast = user.forecast_area
     time_zone = forecast.forecast_time_zone
     time = forecast.time.hour
@@ -179,6 +184,7 @@ task :fourth_check_weather => :environment do
       :to => "#{phone_number}",
       :body => "#{subject}"
     )
+  end
    end
   end  
 end
@@ -187,6 +193,7 @@ task :fifth_check_weather => :environment do
   all_users = User.all
 
   all_users.each do |user|
+    if user.forecast_area
     forecast = user.forecast_area
     time_zone = forecast.forecast_time_zone
     time = forecast.time.hour
@@ -225,6 +232,7 @@ task :fifth_check_weather => :environment do
       :to => "#{phone_number}",
       :body => "#{subject}"
     )
+  end
    end
   end  
 end
@@ -233,6 +241,7 @@ task :sixth_check_weather => :environment do
   all_users = User.all
 
   all_users.each do |user|
+    if user.forecast_area
     forecast = user.forecast_area
     time_zone = forecast.forecast_time_zone
     time = forecast.time.hour
@@ -271,6 +280,7 @@ task :sixth_check_weather => :environment do
       :to => "#{phone_number}",
       :body => "#{subject}"
     )
+  end
    end
   end  
 end
