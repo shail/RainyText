@@ -7,9 +7,20 @@
  	<% if current_user %>
  	<%= link_to "Your Forecast Areas", forecast_areas_path , class: "btn btn-large btn-primary" %>
  	<% else %>
- 	<%= link_to "Sign up now!", new_user_registration_path , class: "btn btn-large btn-primary" %>
+
+ 	<div class="row homepagetable">
+ 	<div class="span3 homerows">
+ 		<h3>Already a member?</h3>
+ 		<%= link_to "Sign in now!", new_user_session_path , class: "btn btn-large btn-success homesign" %>
+ 	</div>
+
+ 	<div class="span3" style="margin-right:-10px;">
+ 		<h3>First time at RainyText?</h3>
+ 		<%= link_to "Sign up now!", new_user_registration_path , class: "btn btn-large btn-primary homesign" %>
+ 	</div>
+ 	</div>
  	<% end %>
- </div>
+</div>
 
  
  
