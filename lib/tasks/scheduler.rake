@@ -1,4 +1,4 @@
-task :check_weather_3 => :environment do
+task :first_check_weather => :environment do
   all_users = User.all
 
   all_users.each do |user|
@@ -44,7 +44,7 @@ task :check_weather_3 => :environment do
   end  
 end
 
-task :check_weather_4 => :environment do
+task :second_check_weather => :environment do
   all_users = User.all
 
   all_users.each do |user|
@@ -90,7 +90,7 @@ task :check_weather_4 => :environment do
   end  
 end
 
-task :check_weather_5 => :environment do
+task :third_check_weather => :environment do
   all_users = User.all
 
   all_users.each do |user|
@@ -136,7 +136,7 @@ task :check_weather_5 => :environment do
   end  
 end
 
-task :check_weather_6 => :environment do
+task :fourth_check_weather => :environment do
   all_users = User.all
 
   all_users.each do |user|
@@ -182,7 +182,7 @@ task :check_weather_6 => :environment do
   end  
 end
 
-task :check_weather_7=> :environment do
+task :fifth_check_weather => :environment do
   all_users = User.all
 
   all_users.each do |user|
@@ -228,7 +228,7 @@ task :check_weather_7=> :environment do
   end  
 end
 
-task :check_weather_8 => :environment do
+task :sixth_check_weather => :environment do
   all_users = User.all
 
   all_users.each do |user|
