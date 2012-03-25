@@ -2,13 +2,13 @@
 <div class="row">
   <div class="span6 offset3">
 <%= form_for @forecast_area do |f| %>
-	<%= f.label :zipcode %>
+	<%= f.label :zipcode, "Zip Code" %>
 	<%= f.text_field :zipcode %>
 
-	<%= f.label :phone_number %>
+	<%= f.label :phone_number, "Phone Number" %> 
 	<%= f.phone_field :phone_number %>
 
-	<%= f.label :time %>
+	<%= f.label :time, "Delivery Time" %>
 	<%= f.select :time, [['6:00 AM'], ['7:00 AM'], ['8:00 AM']] %>
 
 	<%= f.label :forecast_time_zone %>
