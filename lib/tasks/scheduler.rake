@@ -1,25 +1,23 @@
 task :check_weather_3 => :environment do
-  @danger_icons = ["chanceflurries", "chancerain", "chancetstorm", "cloudy", "mostlycloudy", "rain", "tstorms"]
   all_users = User.all
 
   all_users.each do |user|
-  	times = ['6:00 AM', '7:00 AM', '8:00 AM']
   	forecast = user.forecast_area.forecast_time_zone
     time = user.forecast_area.time
 
   	
-  	if user.forecast_area
+  	if (forecast == 'Eastern') && (time == '6:00 AM')
   		
   		barometer = Barometer.new(forecast.zipcode)
   		weather_info = barometer.measure
   		weather_type = weather_info.current.icon
 
-  		subject = "No need for an umbrella today, have a great day!"
+      danger_icons = ["chanceflurries", "chancerain", "chancetstorm", "cloudy", "mostlycloudy", "rain", "tstorms"]
 
-  		@danger_icons.each do |bad_weather|
-  			if weather_type == bad_weather
-  				subject = "Grab an umbrella, don't want to get caught in the rain!"
-  			end
+      if danger_icons.find {|icon| icon == weather_type} 
+        subject = "Grab an umbrella, don't want to get caught in the rain!"
+      else
+  			subject = "No need for an umbrella today, have a great day!"
   		end
   	end
 
@@ -37,3 +35,6 @@ task :check_weather_3 => :environment do
 		)
   end  
 end
+
+times = ['6:00 AM', '7:00 AM', '8:00 AM']
+    forecasts = ['Pacific', 'Mountain', 'Central', 'Eastern']
