@@ -2,6 +2,7 @@ task :first_check_weather => :environment do
   all_users = User.all
 
   all_users.each do |user|
+  if user.forecast_area
   	forecast = user.forecast_area
     time_zone = forecast.forecast_time_zone
     time = forecast.time.hour
@@ -40,6 +41,7 @@ task :first_check_weather => :environment do
 			:body => "#{subject}"
 		)
    end
+  end
   end  
 end
 
