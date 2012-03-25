@@ -4,17 +4,11 @@ task :first_check_weather => :environment do
   all_users.each do |user|
   	forecast = user.forecast_area
     time_zone = forecast.forecast_time_zone
-    time = forecast.time
+    time = forecast.time.hour
     zipcode = forecast.zipcode
     phone_number = "+1#{forecast.phone_number}"
-
-    puts time
-    puts zipcode
-    puts phone_number
-    puts time_zone
-
   	
-  	if (time_zone == 'Eastern') && (time == '6:00 AM')
+  	if (time_zone == 'Eastern') && (time == 6)
   		require 'open-uri'
       require 'json'
 
@@ -24,8 +18,6 @@ task :first_check_weather => :environment do
         new_json = parsed_json["forecast"]
         @weather_type = new_json["txt_forecast"]["forecastday"][0]["icon"]
       end
-
-      puts @weather_type
 
       danger_icons = ["chanceflurries", "chancerain", "chancetstorm", "cloudy", "mostlycloudy", "rain", "tstorms"]
 
@@ -57,12 +49,12 @@ task :second_check_weather => :environment do
   all_users.each do |user|
     forecast = user.forecast_area
     time_zone = forecast.forecast_time_zone
-    time = forecast.time
+    time = forecast.time.hour
     zipcode = forecast.zipcode
     phone_number = "+1#{forecast.phone_number}"
 
     
-    if ((time_zone == 'Eastern' && time == '7:00 AM') || (time_zone == 'Central' && time == '6:00 AM'))
+    if ((time_zone == 'Eastern' && time == 7) || (time_zone == 'Central' && time == 6))
       require 'open-uri'
       require 'json'
 
@@ -103,12 +95,12 @@ task :third_check_weather => :environment do
   all_users.each do |user|
     forecast = user.forecast_area
     time_zone = forecast.forecast_time_zone
-    time = forecast.time
+    time = forecast.time.hour
     zipcode = forecast.zipcode
     phone_number = "+1#{forecast.phone_number}"
 
     
-    if ((time_zone == 'Eastern' && time == '8:00 AM') || (time_zone == 'Central' && time == '7:00 AM') || (time_zone == 'Mountain' && time == '6:00 AM'))
+    if ((time_zone == 'Eastern' && time == 8) || (time_zone == 'Central' && time == 7) || (time_zone == 'Mountain' && time == 6))
       require 'open-uri'
       require 'json'
 
@@ -149,12 +141,12 @@ task :fourth_check_weather => :environment do
   all_users.each do |user|
     forecast = user.forecast_area
     time_zone = forecast.forecast_time_zone
-    time = forecast.time
+    time = forecast.time.hour
     zipcode = forecast.zipcode
     phone_number = "+1#{forecast.phone_number}"
 
     
-    if ((time_zone == 'Central' && time == '8:00 AM') || (time_zone == 'Mountain' && time == '7:00 AM') || (time_zone == 'Pacific' && time == '6:00 AM'))
+    if ((time_zone == 'Central' && time == 8) || (time_zone == 'Mountain' && time == 7) || (time_zone == 'Pacific' && time == 6))
       require 'open-uri'
       require 'json'
 
@@ -195,12 +187,12 @@ task :fifth_check_weather => :environment do
   all_users.each do |user|
     forecast = user.forecast_area
     time_zone = forecast.forecast_time_zone
-    time = forecast.time
+    time = forecast.time.hour
     zipcode = forecast.zipcode
     phone_number = "+1#{forecast.phone_number}"
 
     
-    if ((time_zone == 'Mountain' && time == '8:00 AM') || (time_zone == 'Pacific' && time == '7:00 AM'))
+    if ((time_zone == 'Mountain' && time == 8) || (time_zone == 'Pacific' && time == 7))
       require 'open-uri'
       require 'json'
 
@@ -241,12 +233,12 @@ task :sixth_check_weather => :environment do
   all_users.each do |user|
     forecast = user.forecast_area
     time_zone = forecast.forecast_time_zone
-    time = forecast.time
+    time = forecast.time.hour
     zipcode = forecast.zipcode
     phone_number = "+1#{forecast.phone_number}"
 
     
-    if (time_zone == 'Pacific') && (time == '8:00 AM')
+    if (time_zone == 'Pacific') && (time == 8)
       require 'open-uri'
       require 'json'
 
