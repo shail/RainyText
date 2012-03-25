@@ -10,9 +10,9 @@
 	</tr>
 <% if @forecast_area %>
 	<tr>
-		<td><%= @forecast_area.zipcode %></td>
-		<td><%= @forecast_area.phone_number %></td>
-		<td><%= @forecast_area.time.to_formatted_s(:time) %><%= " (#{@forecast_area.forecast_time_zone})" %> </td>
+		<td><strong><%= @forecast_area.zipcode %></strong></td>
+		<td><strong><%= @forecast_area.phone_number %></strong></td>
+		<td><strong><%= @forecast_area.time.to_formatted_s(:time) %><%= " (#{@forecast_area.forecast_time_zone})" %></strong> </td>
 		<td><%= link_to "Edit", edit_forecast_area_path(@forecast_area), :class => "btn btn-info" %></td>
 		<td><%= link_to "Delete", forecast_area_path(@forecast_area), :confirm => "Are you sure?", :method => 'delete', :class => "btn btn-danger" %></td>
 	</tr>
