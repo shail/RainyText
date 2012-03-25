@@ -1,14 +1,3 @@
-task :test => :environment do
-  all_users = User.all
-  all_users.each do |user|
-    forecast = user.forecast_area
-    time_zone = forecast.forecast_time_zone
-    puts forecast
-    puts time_zone
-  end
-end
-
-
 task :first_check_weather => :environment do
   all_users = User.all
 
@@ -18,6 +7,11 @@ task :first_check_weather => :environment do
     time = forecast.time
     zipcode = forecast.zipcode
     phone_number = "+1#{forecast.phone_number}"
+
+    puts time
+    puts zipcode
+    puts phone_number
+    puts time_zone
 
   	
   	if (time_zone == 'Eastern') && (time == '6:00 AM')
@@ -30,6 +24,8 @@ task :first_check_weather => :environment do
         new_json = parsed_json["forecast"]
         @weather_type = new_json["txt_forecast"]["forecastday"][0]["icon"]
       end
+
+      puts @weather_type
 
       danger_icons = ["chanceflurries", "chancerain", "chancetstorm", "cloudy", "mostlycloudy", "rain", "tstorms"]
 
