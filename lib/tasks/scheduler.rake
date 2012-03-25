@@ -1,16 +1,13 @@
 task :test => :environment do
-  account_sid = 'AC1e33ca9e05cd4f86b12ffab6078464f6'
-      auth_token = 'c451f2e1dc06ae831b8c542323099101'
-
-      client = Twilio::REST::Client.new account_sid, auth_token
-    
-
-    client.account.sms.messages.create(
-      :from => '+17273466568',
-      :to => "+16039186534",
-      :body => "hello"
-    )
+  all_users = User.all
+  all_users.each do |user|
+    forecast = user.forecast_area
+    time_zone = forecast.forecast_time_zone
+    puts forecast
+    puts time_zone
+  end
 end
+
 
 task :first_check_weather => :environment do
   all_users = User.all
