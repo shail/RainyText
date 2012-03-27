@@ -4,6 +4,9 @@
       <%= link_to "RainyText", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
+          <% if current_user %>
+            <li><%= link_to current_user.email, forecast_areas_path %></li>
+          <% end %>
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Help", help_path %></li>
           <% if current_user %>
