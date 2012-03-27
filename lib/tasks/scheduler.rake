@@ -20,6 +20,8 @@ task :first_check_weather => :environment do
         @weather_type = new_json["txt_forecast"]["forecastday"][0]["icon"]
       end
 
+      if @weather_type
+
       danger_icons = ["chanceflurries", "chancerain", "chancetstorm", "cloudy", "mostlycloudy", "rain", "tstorms"]
 
       if danger_icons.find {|icon| icon == @weather_type} 
@@ -40,6 +42,7 @@ task :first_check_weather => :environment do
 			:to => "#{phone_number}",
 			:body => "#{subject}"
 		)
+  end
    end
   end
   end  
