@@ -68,6 +68,8 @@ task :second_check_weather => :environment do
         @weather_type = new_json["txt_forecast"]["forecastday"][0]["icon"]
       end
 
+      if @weather_type
+
       danger_icons = ["chanceflurries", "chancerain", "chancetstorm", "cloudy", "mostlycloudy", "rain", "tstorms"]
 
       if danger_icons.find {|icon| icon == @weather_type} 
@@ -88,7 +90,8 @@ task :second_check_weather => :environment do
       :to => "#{phone_number}",
       :body => "#{subject}"
     )
-   end
+  end
+  end
   end
   end  
 end
@@ -116,6 +119,8 @@ task :third_check_weather => :environment do
         @weather_type = new_json["txt_forecast"]["forecastday"][0]["icon"]
       end
 
+      if @weather_type
+
       danger_icons = ["chanceflurries", "chancerain", "chancetstorm", "cloudy", "mostlycloudy", "rain", "tstorms"]
 
       if danger_icons.find {|icon| icon == @weather_type} 
@@ -136,6 +141,7 @@ task :third_check_weather => :environment do
       :to => "#{phone_number}",
       :body => "#{subject}"
     )
+    end
     end
    end
   end  
@@ -164,6 +170,8 @@ task :fourth_check_weather => :environment do
         @weather_type = new_json["txt_forecast"]["forecastday"][0]["icon"]
       end
 
+      if @weather_type
+
       danger_icons = ["chanceflurries", "chancerain", "chancetstorm", "cloudy", "mostlycloudy", "rain", "tstorms"]
 
       if danger_icons.find {|icon| icon == @weather_type} 
@@ -184,7 +192,8 @@ task :fourth_check_weather => :environment do
       :to => "#{phone_number}",
       :body => "#{subject}"
     )
-  end
+    end
+    end
    end
   end  
 end
@@ -212,6 +221,8 @@ task :fifth_check_weather => :environment do
         @weather_type = new_json["txt_forecast"]["forecastday"][0]["icon"]
       end
 
+      if @weather_type
+
       danger_icons = ["chanceflurries", "chancerain", "chancetstorm", "cloudy", "mostlycloudy", "rain", "tstorms"]
 
       if danger_icons.find {|icon| icon == @weather_type} 
@@ -232,7 +243,8 @@ task :fifth_check_weather => :environment do
       :to => "#{phone_number}",
       :body => "#{subject}"
     )
-  end
+    end
+    end
    end
   end  
 end
@@ -260,6 +272,8 @@ task :sixth_check_weather => :environment do
         @weather_type = new_json["txt_forecast"]["forecastday"][0]["icon"]
       end
 
+      if @weather_type
+
       danger_icons = ["chanceflurries", "chancerain", "chancetstorm", "cloudy", "mostlycloudy", "rain", "tstorms"]
 
       if danger_icons.find {|icon| icon == @weather_type} 
@@ -280,7 +294,8 @@ task :sixth_check_weather => :environment do
       :to => "#{phone_number}",
       :body => "#{subject}"
     )
-  end
+    end
+    end
    end
   end  
 end
