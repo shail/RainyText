@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	after_create :send_welcome_email
+	# after_create :send_welcome_email
 
   has_one :forecast_area
   # Include default devise modules. Others available are:
@@ -10,10 +10,9 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
-  protected 
   
-  def send_welcome_email
-  	UserMailer.welcome_email(self.email).deliver
-  end	
+  # def send_welcome_email
+  # 	UserMailer.welcome_email(self.email).deliver
+  # end	
 
 end
