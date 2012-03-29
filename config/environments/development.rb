@@ -43,11 +43,11 @@ WeatherApp::Application.configure do
   config.action_mailer.default :charset => "utf-8"
 
   ActionMailer::Base.smtp_settings = {
-    :address => 'smtpout.secureserver.net',
-    :port => 80,
+    :address => '#######',
+    :port => ##,
     :domain => 'www.rainytext.com',
-    :user_name => 'rainytexthelp@rainytext.com',
-    :password => 'Thenewland45',
+    :user_name => '##############',
+    :password => '#####',
     :authentication => :plain
 }
 

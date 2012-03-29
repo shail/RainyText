@@ -66,7 +66,7 @@ WeatherApp::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   config.assets.initialize_on_precompile = false
 
-    config.action_mailer.default_url_options = { :host => 'glowing-river-7814.herokuapp.com
+    config.action_mailer.default_url_options = { :host => '######
 ' }
 # ActionMailer Config
 # Setup for production - deliveries, no errors raised
@@ -76,11 +76,11 @@ config.action_mailer.raise_delivery_errors = true
 config.action_mailer.default :charset => "utf-8"
 
 ActionMailer::Base.smtp_settings = {
-  :address => 'smtpout.secureserver.net',
-  :port => 80,
+  :address => '#####',
+  :port => '####',
   :domain => 'www.rainytext.com',
-  :user_name => 'rainytexthelp@rainytext.com',
-  :password => 'Thenewland45',
+  :user_name => '#######',
+  :password => '######',
   :authentication => :plain
 }
 end

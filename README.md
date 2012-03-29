@@ -1,3 +1,3 @@
-Weather app that lets you know when you need to grab your umbrella!
+Weather app that lets you know when you need to grab your umbrella! First Rails app that I built alone. I have needed more help as I've thought about some deeper problems, like dealing with many delayed jobs, and general ideas on scale. My app isn't meant to go viral and acquire so many users, I just chose it to frame these questions I had! 
 
-This is my first app, so it's been a great learning experience!
+I've taken out all the e-mail sensitive info, along with all my private API keys.

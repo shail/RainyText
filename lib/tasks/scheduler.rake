@@ -13,7 +13,7 @@ task :first_check_weather => :environment do
   		require 'open-uri'
       require 'json'
 
-      open("http://api.wunderground.com/api/9cce55db6a4b4e99/forecast/q/#{zipcode}.json") do |f|
+      open("http://api.wunderground.com/api/WUNDERGROUND_API_KEY/forecast/q/#{zipcode}.json") do |f|
         json_string = f.read
         parsed_json = JSON.parse(json_string)
         new_json = parsed_json["forecast"]
@@ -31,14 +31,14 @@ task :first_check_weather => :environment do
   		end
   
 
-      account_sid = 'AC1e33ca9e05cd4f86b12ffab6078464f6'
-		  auth_token = 'c451f2e1dc06ae831b8c542323099101'
+      account_sid = 'TWILIO_ACCOUNT_SID'
+		  auth_token = 'TWILIO_AUTH_TOKEN'
 
 		  client = Twilio::REST::Client.new account_sid, auth_token
   	
 
   	client.account.sms.messages.create(
-			:from => '+17273466568',
+			:from => 'TWILIO_NUMBER',
 			:to => "#{phone_number}",
 			:body => "#{subject}"
 		)
@@ -64,7 +64,7 @@ task :second_check_weather => :environment do
       require 'open-uri'
       require 'json'
 
-      open("http://api.wunderground.com/api/9cce55db6a4b4e99/forecast/q/#{zipcode}.json") do |f|
+      open("http://api.wunderground.com/api/WUNDERGROUND_API_KEY/forecast/q/#{zipcode}.json") do |f|
         json_string = f.read
         parsed_json = JSON.parse(json_string)
         new_json = parsed_json["forecast"]
@@ -82,14 +82,14 @@ task :second_check_weather => :environment do
       end
   
 
-      account_sid = 'AC1e33ca9e05cd4f86b12ffab6078464f6'
-      auth_token = 'c451f2e1dc06ae831b8c542323099101'
+      account_sid = 'TWILIO_ACCOUNT_SID'
+      auth_token = 'TWILIO_AUTH_TOKEN'
 
       client = Twilio::REST::Client.new account_sid, auth_token
     
 
     client.account.sms.messages.create(
-      :from => '+17273466568',
+      :from => 'TWILIO_NUMBER',
       :to => "#{phone_number}",
       :body => "#{subject}"
     )
@@ -115,7 +115,7 @@ task :third_check_weather => :environment do
       require 'open-uri'
       require 'json'
 
-      open("http://api.wunderground.com/api/9cce55db6a4b4e99/forecast/q/#{zipcode}.json") do |f|
+      open("http://api.wunderground.com/api/WUNDERGROUND_API_KEY/forecast/q/#{zipcode}.json") do |f|
         json_string = f.read
         parsed_json = JSON.parse(json_string)
         new_json = parsed_json["forecast"]
@@ -133,14 +133,14 @@ task :third_check_weather => :environment do
       end
   
 
-      account_sid = 'AC1e33ca9e05cd4f86b12ffab6078464f6'
-      auth_token = 'c451f2e1dc06ae831b8c542323099101'
+      account_sid = 'TWILIO_ACCOUNT_SID'
+      auth_token = 'TWILIO_AUTH_TOKEN'
 
       client = Twilio::REST::Client.new account_sid, auth_token
     
 
     client.account.sms.messages.create(
-      :from => '+17273466568',
+      :from => 'TWILIO_NUMBER',
       :to => "#{phone_number}",
       :body => "#{subject}"
     )
@@ -166,7 +166,7 @@ task :fourth_check_weather => :environment do
       require 'open-uri'
       require 'json'
 
-      open("http://api.wunderground.com/api/9cce55db6a4b4e99/forecast/q/#{zipcode}.json") do |f|
+      open("http://api.wunderground.com/api/WUNDERGROUND_API_KEY/forecast/q/#{zipcode}.json") do |f|
         json_string = f.read
         parsed_json = JSON.parse(json_string)
         new_json = parsed_json["forecast"]
@@ -184,14 +184,14 @@ task :fourth_check_weather => :environment do
       end
   
 
-      account_sid = 'AC1e33ca9e05cd4f86b12ffab6078464f6'
-      auth_token = 'c451f2e1dc06ae831b8c542323099101'
+      account_sid = 'TWILIO_ACCOUNT_SID'
+      auth_token = 'TWILIO_AUTH_TOKEN'
 
       client = Twilio::REST::Client.new account_sid, auth_token
     
 
     client.account.sms.messages.create(
-      :from => '+17273466568',
+      :from => 'TWILIO_NUMBER',
       :to => "#{phone_number}",
       :body => "#{subject}"
     )
@@ -217,7 +217,7 @@ task :fifth_check_weather => :environment do
       require 'open-uri'
       require 'json'
 
-      open("http://api.wunderground.com/api/9cce55db6a4b4e99/forecast/q/#{zipcode}.json") do |f|
+      open("http://api.wunderground.com/api/WUNDERGROUND_API_KEY/forecast/q/#{zipcode}.json") do |f|
         json_string = f.read
         parsed_json = JSON.parse(json_string)
         new_json = parsed_json["forecast"]
@@ -235,14 +235,14 @@ task :fifth_check_weather => :environment do
       end
   
 
-      account_sid = 'AC1e33ca9e05cd4f86b12ffab6078464f6'
-      auth_token = 'c451f2e1dc06ae831b8c542323099101'
+      account_sid = 'TWILIO_ACCOUNT_SID'
+      auth_token = 'TWILIO_AUTH_TOKEN'
 
       client = Twilio::REST::Client.new account_sid, auth_token
     
 
     client.account.sms.messages.create(
-      :from => '+17273466568',
+      :from => 'TWILIO_NUMBER',
       :to => "#{phone_number}",
       :body => "#{subject}"
     )
@@ -268,7 +268,7 @@ task :sixth_check_weather => :environment do
       require 'open-uri'
       require 'json'
 
-      open("http://api.wunderground.com/api/9cce55db6a4b4e99/forecast/q/#{zipcode}.json") do |f|
+      open("http://api.wunderground.com/api/WUNDERGROUND_API_KEY/forecast/q/#{zipcode}.json") do |f|
         json_string = f.read
         parsed_json = JSON.parse(json_string)
         new_json = parsed_json["forecast"]
@@ -286,14 +286,14 @@ task :sixth_check_weather => :environment do
       end
   
 
-      account_sid = 'AC1e33ca9e05cd4f86b12ffab6078464f6'
-      auth_token = 'c451f2e1dc06ae831b8c542323099101'
+      account_sid = 'TWILIO_ACCOUNT_SID'
+      auth_token = 'TWILIO_AUTH_TOKEN'
 
       client = Twilio::REST::Client.new account_sid, auth_token
     
 
     client.account.sms.messages.create(
-      :from => '+17273466568',
+      :from => 'TWILIO_NUMBER',
       :to => "#{phone_number}",
       :body => "#{subject}"
     )
